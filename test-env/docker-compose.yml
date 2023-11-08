@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  taximgr-svc:
+    image: taximanagerapi:latest
+    expose:
+    - "80"
+  
+    
+  nginx:
+    image: nginx:latest
+    volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+    - taximgr-svc
+    ports:
+    - "4000:4000" 
+
+    
