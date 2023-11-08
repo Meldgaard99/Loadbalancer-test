@@ -1,0 +1,32 @@
+namespace TaxiManagerAPI.Models
+{
+
+    public class Car
+    {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Color { get; set; }
+        public int Mileage { get; set; }
+
+        public Car(string make, string model, int year, string color, int mileage)
+        {
+            Make = make;
+            Model = model;
+            Year = year;
+            Color = color;
+            Mileage = mileage;
+        }
+
+        public static List<Car> GetCars()
+        {
+            return new List<Car>
+        {
+            new Car("Toyota", "Corolla", 2018, "Red", 50000),
+            new Car("Honda", "Civic", 2019, "Blue", 40000),
+            new Car("Ford", "Mustang", 2020, "Yellow", 30000)
+        };
+        }
+    }
+}
+
